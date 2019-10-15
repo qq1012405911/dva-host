@@ -1,6 +1,6 @@
 # dva-host
 
-前端环境搭建
+#前端环境搭建
 
 1.dva 安装
 npm install dva-cli -g
