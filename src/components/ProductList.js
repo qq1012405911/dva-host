@@ -4,7 +4,6 @@ import { connect } from 'dva';
 import { fetch, post } from '../request/http';
 import api from '../request/api';
 
-
 class Index extends React.Component {
 
   constructor(props) {
@@ -15,7 +14,8 @@ class Index extends React.Component {
     }
   }
   //在渲染前调用,在客户端也在服务端。
-  componentWillMount() {console.log('Component WILL MOUNT!')
+  componentWillMount() {
+    console.log('Component WILL MOUNT!')
     this.ajaxToData();
 
   };
@@ -48,23 +48,6 @@ class Index extends React.Component {
   // }
 
   ajaxToData() {
-
-    // axios.get('http://localhost:8090/user/getAll')
-    //   .then(function (response) {
-    //     console.log(response.data.data)
-    //     _this.setState({
-    //       users: response.data.data,
-    //       isLoaded: true
-    //     });
-    //   })
-    //   .catch(function (error) {
-    //     console.log(error);
-    //     _this.setState({
-    //       isLoaded: false,
-    //       error: error
-    //     })
-    //   })
-    
     const _this = this;    //先存一下this，以防使用箭头函数this会指向我们不希望它所指向的对象。
     fetch(api.product.getAll).then(data => {
       console.log(data)
@@ -72,9 +55,7 @@ class Index extends React.Component {
         users: data.data,
         isLoaded: true
       })
-    }
-    
-    )
+    })
 
 
 
@@ -101,34 +82,6 @@ class Index extends React.Component {
         dataIndex: 'telephone',
       },
     ];
-    // const data = [
-    //   {
-    //     key: '1',
-    //     name: 'John Brown',
-    //     age: 32,
-    //     sex: '男',
-    //   },
-    //   {
-    //     key: '2',
-    //     name: 'Jim Green',
-    //     age: 42,
-    //     sex: '男',
-    //   },
-    //   {
-    //     key: '3',
-    //     name: 'Joe Black',
-    //     age: 32,
-    //     sex: '男',
-    //   },
-    //   {
-    //     key: '4',
-    //     name: 'Disabled User',
-    //     age: 99,
-    //     sex: '男',
-    //   },
-    // ];
-
-
 
     // rowSelection object indicates the need for row selection
     const rowSelection = {
@@ -140,8 +93,6 @@ class Index extends React.Component {
         name: record.name,
       }),
     };
-
-
 
     return (
       <div>
