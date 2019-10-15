@@ -2,7 +2,7 @@
 
 ## 前端环境搭建
 
-1.dva 安装 <\br>
+1.dva 安装 <br>
 npm install dva-cli -g
 2. 初始化项目
 dva new dva-quickstart
